@@ -1,0 +1,13 @@
+<!--pages/template/template.wxml-->
+<!-- 使用模板前，必须先引入模板文件，使用import组件标签引入模板文件,src属性指定模板文件的路径 -->
+<import src="/template/myTmp"/>
+<view class="container">
+  <!-- 使用模板，需要使用template标签，必须指定is属性，该属性指向模板名称 -->
+  <!-- 如果需要在其中传入动态数据，则需要指定data属性，其值可以使用三点运算符展开对象 -->
+  <template is="mytmp" data="{{...userInfo}}"/>
+  <view class="view-A">*************************************************************</view>
+  <view class="view-A">*************************************************************</view>
+  <view class="view-A">*************************************************************</view>
+  <!-- 使用模板,获取用户openID -->
+  <template is="btn-tmp"/>
+</view>

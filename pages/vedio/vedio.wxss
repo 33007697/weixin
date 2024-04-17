@@ -1,0 +1,101 @@
+/* pages/vedio/vedio.wxss */
+.vedioHeader{
+  display: flex;
+  padding: 10rpx;
+}
+.vedioHeader image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.vedioHeader .vedioSearch{
+  flex: 1;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #eee;
+  margin: 0 10rpx;
+  font-size: 28rpx;
+  color: #d43c33;
+}
+/* vedio列表展示 */
+.vedioList{
+  display: flex;
+  white-space: nowrap;
+  margin-top: 20rpx;
+  height: 62rpx;
+}
+.vedioList .vedioItem{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  padding: 0 30rpx;
+}
+.vedioList .vedioItem .active{
+  border-bottom: 2rpx solid #d43c33;
+}
+/* 视频展示 */
+.scrollVedio{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  /* calc() 方法自动计算宽高，其中的运算符左右必须有空格，否则无法生效*/
+  /* vh vw表示视口的宽高，1vh = 1%视口的高度，1vw = 1%视口的宽度 */
+  height: calc(100vh - 166rpx);
+}
+.scrollVedio .scrollItem{
+  margin-bottom: 30rpx;
+  padding: 0 3%;
+  
+}
+.scrollVedio .scrollItem video,image{
+  height: 360rpx;
+  width: 100%;
+  border-radius: 10rpx;
+}
+/* 视频的详细信息 */
+.scrollRick{
+  border: 1rpx solid #ddd;
+  border-top: none;
+  border-bottom-right-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+.scrollRick .scrollRick-image image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.scrollRick .scrollRick-title{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding:5rpx 20rpx;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #ddd;
+  /* 单行禁止换行，并且显示省略号 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scrollRick .scrollRick-image{
+  position: relative;
+  display: flex;
+  height: 80rpx;
+  padding-left:30rpx;
+  line-height: 80rpx;
+  align-items: center;
+}
+.scrollRick .scrollRick-image text{
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  /* 单行禁止换行，并且显示省略号 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scrollRick .btn{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  right: 10rpx;
+}

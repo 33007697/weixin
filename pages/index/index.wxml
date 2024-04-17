@@ -1,0 +1,66 @@
+<!--pages/index/index.wxml-->
+<!-- 网易云音乐导航模块 -->
+<view>
+  <!-- 轮播图模块 autoplay是否自动播放,circular是否衔接图片 -->
+  <swiper autoplay circular class="banners" indicator-dots indicator-color="ivory" indicator-active-color="#d43c33">
+  <!-- 列表展示，使用wx:for指令 ，需要设置wx:key值，其值为唯一值,可以直接获取到当前item中的属性 -->
+    <swiper-item wx:for="{{banners}}" wx:key="bannerId">
+      <image src="{{item.pic}}"/>
+    </swiper-item>
+  </swiper>
+  <!-- 每日推荐导航栏 -->
+  <view class="navgate-bar">
+    <view class="navgate-item" bind:tap="navRecommend">
+      <text class="iconfont icon-meirituijian"></text>
+      <text>每日推荐</text>
+    </view>
+    <view class="navgate-item" bind:tap="navOther">
+      <text class="iconfont icon-pc-4"></text>
+      <text>Other</text>
+    </view>
+    <view class="navgate-item">
+      <text class="iconfont icon-paihangbang"></text>
+      <text>排行榜</text>
+    </view>
+    <view class="navgate-item">
+      <text class="iconfont icon-diantai"></text>
+      <text>电台</text>
+    </view>
+    <view class="navgate-item">
+      <text class="iconfont icon-zhibo"></text>
+      <text>直播</text>
+    </view>
+  </view>
+  <!-- 推荐歌曲滑动列表 -->
+  <view class="scroll-bar">
+    <!-- 该处引用自定义组件 -->
+    <NavHeader title='推荐歌曲' nav='每日更精彩'/> 
+    <!-- 推荐歌曲滑动列表展示 -->
+    <!-- 这里需要使用scroll-view组件标签 -->
+    <scroll-view class="scroll-main" enable-flex scroll-x>
+    <!-- 列表展示，使用wx:for指令，必须指定wx:key值，其值为唯一值 -->
+    <!-- wx:for指令中默认下标名称index，默认每一项为item -->
+    <!-- 可以只用wx:for-index指令指定下标名称，wx:for-item指令指定每一项都名称 -->
+      <view class="scroll-item" wx:for="{{personalized}}" wx:key="id">
+        <image class="scroll-image" src="{{item.picUrl}}"/>
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 排行榜 -->
+  <view class="topList">
+  <!-- 排行榜头部区域 -->
+  <NavHeader title='排行榜' nav='看看更精彩'/>
+  <!-- 排行榜列表内容区域 -->
+    <swiper class="topList-rank" circular next-margin="50rpx">
+      <swiper-item wx:for="{{topListData}}" wx:key="name">
+        <view class="topList-title">{{item.name}}</view>
+        <view class="topList-item" wx:for='{{item.lists}}' wx:for-item='itemRank' wx:key="name" wx:for-index='itemIndex'>
+          <image src="{{itemRank.al.picUrl}}"/>
+          <text class="topList-number">{{itemIndex + 1}}</text>
+          <text class="topList-name">{{itemRank.name}}</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

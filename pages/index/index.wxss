@@ -1,0 +1,109 @@
+/* pages/index/index.wxss */
+/* 轮播图 */
+.banners{
+  height: 300rpx;
+}
+.banners image{
+  width: 100%;
+  height: 100%;
+}
+/* 每日推荐导航栏 */
+.navgate-bar{
+  display: flex;
+  height: 100%;
+}
+.navgate-item{
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+.navgate-item .iconfont{
+  line-height: 100rpx;
+  height: 100rpx;
+  width: 100rpx;
+  margin: 20rpx 0;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgb(240, 19, 19);
+  color:white;
+  font-size: 45rpx;
+}
+.navgate-item text{
+  font-size: 26rpx;
+}
+/* 推荐歌曲父节点 */
+.scroll-bar{
+  padding: 0 20rpx;
+  font-size: 32rpx;
+}
+/* 推荐歌曲列表展示 */
+.scroll-main{
+  display: flex;
+  margin: 20rpx 0;
+  /* scroll-view需要一个固定的高度，否则其高度会出现bugger，会影响页面布局 */
+  height: 300rpx;
+}
+.scroll-main .scroll-item{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+.scroll-main .scroll-item .scroll-image{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.scroll-main .scroll-item text{
+  font-size: 26rpx;
+  /* 多行文本溢出隐藏，省略号代替 */
+  overflow: hidden;
+  /* 省略号代替 */
+  text-overflow: ellipsis;
+  /* 设置当前标签的类型为-webkit-box */
+  display: -webkit-box; 
+  /* 设置webkit-box对齐模式 */
+  -webkit-box-orient: vertical;
+  /* 设置保留行数 */
+  -webkit-line-clamp: 2;
+}
+/* 排行榜 */
+.topList{
+  padding: 20rpx;
+
+}
+.topList-rank{
+  /* 设置scroll-view的高度，其默认高度为150rpx */
+  height: 400rpx;
+  background-color: #fdfdfd;
+}
+.topList-title{
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.topList-item{
+  height: 100rpx;
+  display: flex;
+  margin-bottom: 20rpx;
+
+}
+.topList-item image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 6rpx;
+}
+.topList-item .topList-number{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+.topList-item .topList-name{
+  height: 100rpx;
+  line-height: 100rpx;
+  /* 单行不换行，显示省略号 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

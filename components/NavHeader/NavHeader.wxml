@@ -1,0 +1,9 @@
+<!-- 推荐歌曲滑动列表头部 -->
+<!-- 自定义组件结构 -->
+<view class="scorll-header">
+  <view class="header-top">{{title}}</view>
+  <view class="header-item">
+    <text>{{nav}}</text>
+    <text class="header-right">查看更多</text>
+  </view>
+</view>

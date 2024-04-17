@@ -1,0 +1,141 @@
+/* pages/search/search.wxss */
+.searchContainer{
+  padding: 0 20rpx;
+}
+/* 搜索页面头部 */
+.header{
+  position: relative;
+  display: flex;
+  padding: 10rpx 0;
+}
+.header input{
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+}
+.header .header-btn{
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #eee;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+}
+.header .sousuo{
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+.header .clear{
+  position: absolute;
+  z-index: 10;
+  height: 60rpx;
+  line-height: 60rpx;
+  right: 100rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+/* 热搜榜 */
+
+.hotTitle{
+  position: relative;
+  border-bottom: 1rpx solid #ddd;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.hotList{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.hotList .hotItem{
+  display: flex;
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.hotList .hotItem .hotIndex{
+  width: 60rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.hotList .hotItem .hotName{
+  white-space: nowrap;    
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hotItem .iconImage{
+  width: 30rpx;
+  height: 30rpx;
+  margin: auto 10rpx;
+}
+
+/* 搜索内容展示列表 */
+
+.searchList .searchTitle{
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #c43d33;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #ddd;
+}
+.searchList .searchItem{
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.searchItem .content{
+  flex: 1;
+  border-bottom: 1rpx solid #eee;
+  margin-left: 20rpx;
+  /* 单行超出部分省略 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 历史搜索记录 */
+.histroyContainer{
+  position: relative;
+  display: flex;
+  font-size: 24rpx;
+  flex-wrap: wrap;
+  margin: 20rpx 0;
+}
+.histroyContainer .title{
+  font-size: 28rpx;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.histroyContainer .historyItem{
+  background-color: #eee;
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  margin:5rpx 10rpx;
+}
+.delete{
+  position: absolute;
+  width: 60rpx;
+  height: 60rpx;
+  right: 0;
+  bottom: 0;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #eee;
+  color: #c43d33;
+  margin:0 15rpx;
+  z-index: 10;
+}

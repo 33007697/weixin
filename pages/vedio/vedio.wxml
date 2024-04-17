@@ -1,0 +1,45 @@
+<!--pages/vedio/vedio.wxml-->
+<!-- vedio页面结构 -->
+<view class="vedioComponent">
+  <!-- vedio页面头部 -->
+  <view class="vedioHeader">
+    <image src="/static/images/video/video.jpg"/>
+    <view class="vedioSearch" bind:tap="goSearch">搜索</view>
+    <image src="/static/images/logo.png"/>
+  </view>
+  <!-- vedio列表展示 -->
+  <!-- scroll-into-view指定选中的元素前移，需要指定其子元素的id scroll-with-animation移动时是否采用动画过渡效果 -->
+  <scroll-view class="vedioList" enable-flex scroll-x scroll-into-view="{{'scroll'+navId}}" scroll-with-animation>
+    <view id="{{'scroll'+item.id}}" class="vedioItem" wx:for="{{vedioList}}" wx:key="id">
+      <view class="{{navId === item.id? 'active':''}}" bind:tap="showVedios" id="{{item.id}}">{{item.name}}</view>
+    </view> 
+  </scroll-view>
+  <!-- 列表展示视频 -->
+  <!-- refresher-enabled 开启下拉刷新 	refresher-triggered设置下拉刷新状态 bindrefresherrefresh下拉刷新被触发事件 -->
+  <!-- bindscrolltolower上拉触底时触发事件 -->
+  <scroll-view refresher-enabled class="scrollVedio" enable-flex scroll-y 
+    refresher-triggered='{{isScroll}}'
+    bindrefresherrefresh="handleSherre"
+    bindscrolltolower="handleLower"
+  >
+    <view class="scrollItem" wx:for="{{vedioListData}}" wx:key="id">
+      <video wx:if="{{vid === item.data.vid}}" object-fit="fill" src="{{videoUrl.url}}" poster="{{item.data.coverUrl}}"
+      id="{{item.data.vid}}"
+      bindplay="contarlPlay"
+      bindtimeupdate="getVedioTime"
+      bindended="getVedioEnd"
+      />
+      <image wx:else src="{{item.data.coverUrl}}" id="{{item.data.vid}}" bind:tap="contarlPlay"/>
+      <view class="scrollRick">
+        <view class="scrollRick-title">{{item.data.title}}</view>
+        <view class="scrollRick-image">
+          <image src="{{item.data.creator.avatarUrl}}" />
+          <text>{{item.data.creator.nickname}}</text>
+          <!-- open-type="share"表示开启点击分享功能 -->
+          <text class="iconfont icon-gengduo btn"></text>
+        </view>
+        
+      </view>
+    </view>
+  </scroll-view>
+</view>

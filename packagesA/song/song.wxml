@@ -1,0 +1,34 @@
+<!--pages/song/song.wxml-->
+<!-- 音乐播放界面 -->
+<view class="songContainer">
+  <view class="outher">{{songDetail.ar[0].name}}</view>
+  <!-- 指针 -->
+  <text class="caird"></text>
+  <!-- 使用变量控制指针的动画效果 -->
+  <image src="/static/images/song/needle.png" class="needle {{isPlay? 'needleRoate':''}}"/>
+  <!-- 碟片 -->
+  <!-- 使用变量控制碟片的动画效果 -->
+  <view class="discContainer {{isPlay?'discRoate':''}}">
+    <image src="/static/images/song/disc.png" class="disc"/>
+    <image src="{{songDetail.al.picUrl}}" class="outherPhoto"/>
+  </view>
+  <!-- 音频进度条 -->
+  <view class="progressBar">
+    <text>{{musicTime}}</text>
+    <view class="propress">
+      <view class="carber" style="width: {{carberWidth + 'rpx'}};">
+        <view class="dot"></view>
+      </view>
+    </view>
+    <text>{{totalTime}}</text>
+  </view>
+  <!-- 播放器 -->
+  <view class="playBackContainer">
+    <text class="iconfont icon-suijibofang"></text>
+    <text class="iconfont icon-shangyishoushangyige" id="prev" bind:tap="handleSwitch"></text>
+    <!-- 使用变量控制播放图标的转换 -->
+    <text class="iconfont {{isPlay? 'icon-zanting':'icon-bofang'}} player" bind:tap="handleSongPlay"></text>
+    <text class="iconfont icon-xiayigexiayishou" id="next" bind:tap="handleSwitch"></text>
+    <text class="iconfont icon-24gf-playlistMusic4"></text>
+  </view>
+</view>

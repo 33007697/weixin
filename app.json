@@ -1,0 +1,80 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/template/template",
+    "pages/search/search",
+    "pages/recommendSong/recommendSong",
+    "pages/logins/logins",
+    "pages/song/song",
+    "pages/vedio/vedio",
+    "pages/personal/personal",
+    "pages/login/login"
+    
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "硅谷云音乐",
+    "navigationBarBackgroundColor": "#d43c33"
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "//": "配置tabBar配置项，其中list配置是tabBar的列表，其值是数组，数组中每一项都是一个对象，最少2个，最多5个",
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#d43c33",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "/static/images/tabs/tab-home.png",
+        "selectedIconPath": "/static/images/tabs/tab-home-current.png"
+      },
+      {
+        "pagePath": "pages/vedio/vedio",
+        "text": "视频",
+        "iconPath": "/static/images/tabs/select.png",
+        "selectedIconPath": "/static/images/tabs/selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心",
+        "iconPath": "/static/images/tabs/tab-my.png",
+        "selectedIconPath": "/static/images/tabs/tab-my-current.png"
+      }
+    ]
+  },
+  "//":"requiredBackgroundModes是可以在后台请求权限的模式，audio表示背景音乐，location表示定位",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "//":"subPackages表示哪些页面需要分包，其值是数组，数组中每项为一个分包的对象",
+  "subPackages": [
+    {
+      "root": "packagesA",
+      "name": "songDetail",
+      "pages": [
+        "recommendSong/recommendSong",
+        "song/song"
+      ]
+    },
+    {
+      "root": "packagesB",
+      "name": "other",
+      "pages": [
+        "template/template"
+      ],
+      "independent": true
+    }
+  ],
+  "//":"preloadRule分包预加载,其值是个对象，key为哪个页面要预加载其它页面，network是网络模式，packages是页面，可以是分包中的包名，也可以是页面路径",
+  "preloadRule": {
+    "pages/index/index":{
+      "network": "all",
+      "packages": ["songDetail","other"]
+    }
+  }
+}

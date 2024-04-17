@@ -1,0 +1,151 @@
+/* pages/song/song.wxss */
+/* 播放器样式 */
+.songContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  
+}
+.songContainer .outher{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+/* 播放指针 */
+.songContainer .needle{
+  position: relative;
+  left: 58rpx;
+  top: -30rpx;
+  width: 192rpx;
+  height: 274rpx;
+  /* 设置层级 */
+  z-index: 90;
+  /* 设置原始旋转点 */
+  transform-origin: 40rpx 0;
+  /* 设置旋转位置 */
+  transform:rotate(-20deg);
+  /* 设置旋转时过渡效果 */
+  transition: transform 1s;
+}
+/* 让指针旋转 */
+.songContainer .needleRoate{
+  /* 设置图片旋转,回到原来的位置 */
+  transform: rotate(0deg); 
+}
+/* 播放指针的圆点 */
+.songContainer .caird{
+  position: relative;
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background-color: white;
+  /* 设置层级，此层级最高 */
+  z-index: 100;
+}
+/* 碟片容器 */
+.songContainer .discContainer{
+  position: relative;
+  top: -170rpx;
+  width: 598rpx;
+  height: 598rpx;
+  line-height: 598rpx;
+}
+/* 碟片 */
+.discContainer .disc{
+  width: 100%;
+  height: 100%;
+}
+/* 碟片中间的图像 */
+.discContainer .outherPhoto{
+  /* 让图片居中显示 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 370rpx;
+  height: 370rpx;
+  border-radius: 50%;
+
+}
+/* 设置碟片旋转 */
+.discRoate{
+  /* 旋转碟片，使用自定义动画 */
+  /* 动画帧为disc 执行时间5s 匀速运动 无限循环执行 */
+  animation: disc 5s linear infinite;
+  /* 设置动画延迟1s执行,等指针完成动画后执行 */
+  animation-delay: 1s;
+}
+/* 设置自定义动画的动画帧 */
+@keyframes disc{
+  /* 使用form to形式 */
+  /* form开始位置 */
+  form{
+    transform: rotate(0deg);
+  }
+  /* to 结束位置 */
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+/* 播放控制器 */
+.playBackContainer{
+  position: absolute;
+  display: flex;
+  bottom: 60rpx;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  border-top: 1rpx solid white;
+}
+.playBackContainer text{
+  width: 20%;
+  height: 100%;
+  line-height: 120rpx;
+  text-align: center;
+  font-size: 50rpx;
+}
+.playBackContainer .player{
+  font-size: 80rpx;
+}
+
+/* 音频播放进度条 */
+.progressBar{
+  position: absolute;
+  display: flex;
+  width: 640rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  bottom: 220rpx;
+}
+.propress{
+  position: relative;
+  margin: auto;
+  width: 450rpx;
+  height: 4rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* 进度条实时进度 */
+.propress .carber{
+  position: absolute;
+  height: 4rpx;
+  background-color: red;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+/* 进度条小圆点 */
+.carber .dot{
+  position: absolute;
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background-color: white;
+  right: -12rpx;
+  top: -4rpx;
+
+}

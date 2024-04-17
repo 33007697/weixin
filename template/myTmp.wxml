@@ -1,0 +1,15 @@
+<!-- 定义模板，使用template组件标签，必须指定name属性 -->
+<template name="mytmp">
+  <view class="title">这是一个新定义的模板</view>
+  <view class="content">
+    <text>用户名称：{{username}}</text>
+    <text>用户年龄：{{age}}</text>
+    <text>用户手机号：{{phone}}</text>
+  </view>
+</template>
+
+<!-- 定义一个新的模板 -->
+<template name="btn-tmp">
+  <view class="title">点击下方按钮，获取用户openID</view>
+  <button class="btn" bind:tap="handleGetOpenId">获取OpenID</button>
+</template>

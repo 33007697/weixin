@@ -1,0 +1,82 @@
+/* pages/recommendSong/recommendSong.wxss */
+.recommedSongHeader{
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+.recommedSongHeader image{
+  width: 100%;
+  height: 100%;
+}
+.recommedSongHeader .recommendSongDate{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -150rpx;
+  margin-top: -50rpx;
+  width: 300rpx;
+  height: 100rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: white;
+  /* border:1rpx solid red; */
+}
+.recommendSongDate .day{
+  font-size: 38rpx;
+}
+/* 每日推荐列表 */
+.recommedSongList{
+  position: relative;
+  top: -20rpx;
+  padding: 0 20rpx;
+  border-radius: 30rpx;
+  background-color: white;
+}
+.recommedSongList .recommedListHeader{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.recommedSongList .recommedListHeader .gengduo{
+  float: right;
+}
+/* 歌曲列表 */
+.recommedSongList .songList{
+  /* 设置scroll-view的高度 */
+  height: calc(100vh - 380rpx);
+}
+.songItem{
+  display: flex;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+.songItem image{
+  display: flex;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+.songItem .songOuther{
+  display: flex;
+  flex-direction: column;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+.songItem .songOuther .songName,.outher{
+  width: 300rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  /* 限制名称太长,单行不换行，超出省略号 */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.songItem .iconfont{
+  position: absolute;
+  right: 0;
+  width: 80rpx;
+  height: 80rpx;
+  text-align:right;
+  line-height: 80rpx;
+  margin-right: 0;
+  /* border:1rpx solid red; */
+}

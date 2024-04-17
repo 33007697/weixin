@@ -1,0 +1,6 @@
+page{
+  height: 100%;
+}
+
+/* 引入iconfont矢量图标库 */
+@import '/static/iconfont.wxss'

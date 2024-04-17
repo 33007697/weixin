@@ -1,0 +1,11 @@
+/* pages/template/template.wxss */
+/* 引入模板的样式文件，需要使用@import方法 */
+@import '/template/myTmp.wxss';
+
+.container .view-A{
+  width: 90%;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin: 0 auto;
+  overflow: hidden;
+}

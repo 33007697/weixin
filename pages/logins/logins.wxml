@@ -1,0 +1,10 @@
+<!--pages/logins/logins.wxml-->
+<view class="qhCode-parsen">
+  <view class="qhCode">
+    <text class="qhCode-header">因账户安全，请扫码登录！</text>
+    <view class="qhCode-image">
+      <image src="{{codeQrimg? codeQrimg:'/static/images/nvsheng.jpg'}}"/>
+    </view>
+    <text class="qhCode-time">刷新倒计时：60</text>
+  </view>
+</view>

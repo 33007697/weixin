@@ -1,0 +1,27 @@
+<!--pages/recommendSong/recommendSong.wxml-->
+<!-- recommendSong头部 -->
+<view class="recommendSongContianer">
+  <view class="recommedSongHeader">
+    <image src="/static/images/recommendSong/recommendSong.jpg"/>
+    <view class="recommendSongDate">
+      <text class="day">{{day}} / </text>
+      <text class="mouth">{{mouth}}</text>
+    </view>
+  </view>
+  <view class="recommedSongList">
+    <view class="recommedListHeader">
+      <text>推荐歌曲</text>
+      <text class="gengduo">更多</text>
+    </view>
+    <scroll-view class="songList" scroll-y>
+      <view class="songItem" wx:for="{{songLists}}" wx:key="id" id="{{item.id}}" data-index="{{index}}" bind:tap="handleSongDetail">
+        <image src="{{item.picUrl}}" />
+        <view class="songOuther">
+          <text class="songName">{{item.name}}</text>
+          <text class="outher">{{item.song.artists[0].name}}</text>
+        </view>
+        <text class="iconfont icon-gengduo"></text>
+      </view>
+    </scroll-view>
+  </view>
+</view>

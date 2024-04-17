@@ -1,0 +1,44 @@
+<!--pages/search/search.wxml-->
+<view class="searchContainer">
+<!-- 搜索页面头部 -->
+  <view class="header">
+    <text class="iconfont icon-sousuo sousuo"></text>
+    <input value="{{searchContent}}" type="text" placeholder="{{message? message:'请输入搜索内容'}}"
+      bindinput="handleInput"
+     />
+    <text class="iconfont icon-shanchu2 clear" bind:tap="handleClear" hidden="{{!searchContent}}"></text>
+    <text class="header-btn" bind:tap="handleClear">取消</text>
+  </view>
+  <!-- 搜索内容展示列表 -->
+  <block wx:if="{{searchList.length}}">
+    <view class="searchList">
+      <view class="searchTitle">搜索内容：{{searchContent}}</view>
+      <view class="searchItem" wx:for="{{searchList}}" wx:key="id">
+        <text class="iconfont icon-sousuo"></text>
+        <text class="content">{{item.name}}</text>
+      </view>
+    </view>
+  </block>
+ 
+  <block wx:else>
+  <!-- 历史数据 -->
+    <view class="histroyContainer" wx:if="{{historyList.length}}">
+      <view class="title">历史</view>
+      <view class="historyItem" wx:for="{{historyList}}" wx:key="item">
+        {{item}}
+      </view>
+      <text class="iconfont icon-shanchu1 delete" bind:tap="handleDelete"></text>
+    </view>
+  <!-- 热搜榜 -->
+    <view class="hotContainer">
+      <view class="hotTitle">热搜榜</view>
+      <view class="hotList">
+        <view class="hotItem" wx:for="{{hotList}}" wx:key="searchWord">
+          <text class="hotIndex">{{index + 1}}</text>
+          <text class="hotName">{{item.searchWord}}</text>
+          <image wx:if="{{item.iconUrl}}" src="{{item.iconUrl}}" class="iconImage"/>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>
